@@ -15,6 +15,9 @@ export class ArtistComponent implements OnInit
 	id:string;
 	artist:Artist[];
 	albums:Album[];
+  artist_id:any;
+
+  private searchStr:string;
 
   constructor(private _musicService:MusicService, 
   	private _route:ActivatedRoute ) 
@@ -23,6 +26,8 @@ export class ArtistComponent implements OnInit
   }
 
    ngOnInit(){
+      this.artist_id =  this._route.params;
+      console.log(this._route.params);
         this._route.params
             .map(params => params['id'])
             .subscribe((id) => {
@@ -35,5 +40,9 @@ export class ArtistComponent implements OnInit
                         this.albums = albums.items;
                     })
             });
+    }
+
+    searchTrack(){
+      console.log( this.searchStr + " " +  this.artist['id']);
     }
 }

@@ -5,6 +5,8 @@
         <input type="text" name="searchStr" class="form-control" placeholder="Search Artists...." [(ngModel)]="searchStr" (keyup)="searchMusic()">
     </div>
 </form>
+
+
 <div *ngIf="searchRes">
     <div *ngFor="let artist of searchRes">
         <div class='row'>

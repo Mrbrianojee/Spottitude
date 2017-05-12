@@ -9,6 +9,7 @@ export class MusicService {
   private artistUrl: string;
   private albumsUrl: string;
   private albumUrl: string;
+ 
 
   constructor(private _http:Http) { 
 
